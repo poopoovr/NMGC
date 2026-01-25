@@ -16,13 +16,12 @@ public class Plugin : BaseUnityPlugin
     private void Start()
     {
         new Harmony(Constants.PluginGuid).PatchAll(Assembly.GetExecutingAssembly());
-        Console.Console.LoadConsole();
         GorillaTagger.OnPlayerSpawned(OnGameInitialized);
     }
 
     private void Update()
     {
-        if (UnityInput.Current.GetKeyDown(KeyCode.F4))
+        if (UnityInput.Current.GetKeyDown(KeyCode.Alpha0))
             GUIController.MainPanel.gameObject.SetActive(!GUIController.MainPanel.gameObject.activeSelf);
     }
 
